@@ -26,19 +26,19 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            overflow: hidden; /* Pour cacher le texte qui déborde */
+            overflow: hidden; 
         }
         
         .animated-text {
-            font-size: 36px; /* Taille du texte */
+            font-size: 36px; 
             display: inline-block;
             white-space: nowrap;
-            opacity: 0; /* Texte invisible au départ */
-            transition: opacity 1s; /* Transition de l'opacité */
+            opacity: 0; 
+            transition: opacity 1s; 
         }
 
         .content {
-            margin-top: 60px; /* Pour compenser la hauteur de la bandelette */
+            margin-top: 60px; 
             padding: 20px;
             text-align: center;
         }
@@ -76,23 +76,23 @@
         .carousel {
             position: relative;
             flex: 2;
-            height: 600px; /* Hauteur du carrousel */
+            height: 600px; 
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alignement vertical changé pour descendre l'image */
+            align-items: flex-start;
         }
 
         .carousel img {
-            width: 100%; /* L'image prend toute la largeur de son conteneur */
-            height: auto; /* La hauteur est automatique pour garder le ratio */
-            max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du carrousel */
-            object-fit: contain; /* Assure que l'image s'adapte à l'espace */
+            width: 100%; 
+            height: auto; 
+            max-height: 100%; 
+            object-fit: contain; 
             transition: opacity 0.5s ease;
             border-radius: 10px;
             opacity: 0;
             position: absolute;
-            top: 0; /* Position verticale ajustée pour descendre l'image */
+            top: 0; 
         }
 
         .carousel img.active {
@@ -105,7 +105,7 @@
             padding: 16px;
             font-size: 24px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.3); /* Fond des flèches plus transparent */
+            background-color: rgba(0, 0, 0, 0.3); 
             cursor: pointer;
             border: none;
             transform: translateY(-50%);
@@ -138,13 +138,11 @@
         </div>
 
         <div class="carousel">
-            <!-- Images du carrousel -->
             <img class="carousel-img active" src="https://media.discordapp.net/attachments/919619429539676222/1292431403014815908/IMG_0369.jpg?ex=6703b60a&is=6702648a&hm=e880a989b4c676937638a80fbccc151d6fe67f0b0ae77475ddf9ab815bd03f78&=&format=webp&width=763&height=1357" alt="Image 1">
             <img class="carousel-img" src="https://media.discordapp.net/attachments/919619429539676222/1292431403375656971/IMG_0365.png?ex=6703b60a&is=6702648a&hm=299a7d2ae356f7ce103f6218e26cfb8b3ec265829bdcfdf69048bc88846fef34&=&format=webp&quality=lossless&width=766&height=1357" alt="Image 2">
             <img class="carousel-img" src="https://media.discordapp.net/attachments/919619429539676222/1292431404117790840/IMG_0360.jpg?ex=6703b60a&is=6702648a&hm=da91b3ddad5d7b25790f9a61d3473f3ca088b96ccdada342c3f7c5b521e3d444&=&format=webp&width=763&height=1357" alt="Image 3">
             <img class="carousel-img" src="https://media.discordapp.net/attachments/919619429539676222/1292416820007014501/IMG_0375.jpg?ex=6703a875&is=670256f5&hm=b936ebdfb0a1e3a8ce8f16b23af2fda6a39c3205a237144d0bfdb38672d31300&=&format=webp&width=763&height=1357" alt="Image 4">
 
-            <!-- Flèches de navigation -->
             <button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
             <button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
         </div>
@@ -174,19 +172,15 @@
         const animatedText = document.getElementById("animated-text");
 
         function displayRandomPhrase() {
-            // Choisir une phrase aléatoire du tableau
             const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-            animatedText.innerHTML = randomPhrase; // Remplace le texte actuel par la nouvelle phrase
-
-            // Rendre le texte visible
+            animatedText.innerHTML = randomPhrase;
+            
             animatedText.style.opacity = 1; 
 
-            // Faire disparaître le texte après 5 secondes
             setTimeout(() => {
-                animatedText.style.opacity = 0; // Rendre le texte invisible
+                animatedText.style.opacity = 0; 
             }, 5000);
 
-            // Attendre 6 secondes avant d'afficher la prochaine phrase (5 secondes d'affichage + 1 seconde pour la disparition)
             setTimeout(displayRandomPhrase, 6000);
         }
 

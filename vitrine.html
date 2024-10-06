@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Vitrine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://lh4.googleusercontent.com/proxy/009taLMjc9a69w34mcK3ghIGtOWnEPwrD8LHd4GfuiJoCLwnW33iAn4GwUnqD9kUlp_7J0Rq6ARaxOYkZ211MXEmNcFpOF3HUVmZEqCgcEg8aJkvBzBfgAV7WDAFCbozBCXzXjrTXKeIfzFGStLp3l_ZlQmjlMU6QjX1q3Chzd5eUY1PR6iVayE');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .banner {
+            width: 100%;
+            background-color: #000000c5;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            overflow: hidden; /* Pour cacher le texte qui déborde */
+        }
+        
+        .animated-text {
+            font-size: 36px; /* Taille du texte */
+            display: inline-block;
+            white-space: nowrap;
+            opacity: 0; /* Texte invisible au départ */
+            transition: opacity 1s; /* Transition de l'opacité */
+        }
+
+        .content {
+            margin-top: 60px; /* Pour compenser la hauteur de la bandelette */
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            top: 150px;
+            position: relative;
+        }
+
+        .text-content {
+            flex: 1;
+            margin-right: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: left;
+            margin-left: -550px;
+        }
+
+        .carousel {
+            position: relative;
+            flex: 2;
+            height: 600px; /* Hauteur du carrousel */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alignement vertical changé pour descendre l'image */
+        }
+
+        .carousel img {
+            width: 100%; /* L'image prend toute la largeur de son conteneur */
+            height: auto; /* La hauteur est automatique pour garder le ratio */
+            max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du carrousel */
+            object-fit: contain; /* Assure que l'image s'adapte à l'espace */
+            transition: opacity 0.5s ease;
+            border-radius: 10px;
+            opacity: 0;
+            position: absolute;
+            top: 0; /* Position verticale ajustée pour descendre l'image */
+        }
+
+        .carousel img.active {
+            opacity: 1;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            font-size: 24px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3); /* Fond des flèches plus transparent */
+            cursor: pointer;
+            border: none;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <p class="animated-text" id="animated-text"></p>
+    </div>
+
+    <div class="container">
+        <div class="text-content">
+            <h1>Ma princesse ❤️ </h1>
+            <p>Il y a des choses dans la vie qui sont difficiles à mettre en mots, mais l’amour que j’ai pour toi en fait partie. Chaque jour à tes côtés me rappelle à quel point tu es importante pour moi. Quand je te regarde, je ressens une paix et une joie que je ne trouve nulle part ailleurs.
+
+                Je t’aime tellement que parfois, cela me dépasse. Ce n’est pas seulement ce que tu fais ou dis, c’est la personne que tu es. Tu es ma force, mon refuge, mon sourire au quotidien. Chaque moment passé avec toi est un cadeau, et je me rends compte à quel point je suis chanceux de t’avoir dans ma vie.
+                
+                Je veux que tu saches que peu importe les épreuves ou les moments de bonheur, je serai toujours là pour toi, comme tu l’es pour moi. Je t’aime au-delà des mots, au-delà du temps, et je veux passer chaque instant à te le prouver.</p>
+        </div>
+
+        <div class="carousel">
+            <!-- Images du carrousel -->
+            <img class="carousel-img active" src="https://media.discordapp.net/attachments/919619429539676222/1292431403014815908/IMG_0369.jpg?ex=6703b60a&is=6702648a&hm=e880a989b4c676937638a80fbccc151d6fe67f0b0ae77475ddf9ab815bd03f78&=&format=webp&width=763&height=1357" alt="Image 1">
+            <img class="carousel-img" src="https://media.discordapp.net/attachments/919619429539676222/1292431403375656971/IMG_0365.png?ex=6703b60a&is=6702648a&hm=299a7d2ae356f7ce103f6218e26cfb8b3ec265829bdcfdf69048bc88846fef34&=&format=webp&quality=lossless&width=766&height=1357" alt="Image 2">
+            <img class="carousel-img" src="https://media.discordapp.net/attachments/919619429539676222/1292431404117790840/IMG_0360.jpg?ex=6703b60a&is=6702648a&hm=da91b3ddad5d7b25790f9a61d3473f3ca088b96ccdada342c3f7c5b521e3d444&=&format=webp&width=763&height=1357" alt="Image 3">
+            <img class="carousel-img" src="https://media.discordapp.net/attachments/919619429539676222/1292416820007014501/IMG_0375.jpg?ex=6703a875&is=670256f5&hm=b936ebdfb0a1e3a8ce8f16b23af2fda6a39c3205a237144d0bfdb38672d31300&=&format=webp&width=763&height=1357" alt="Image 4">
+
+            <!-- Flèches de navigation -->
+            <button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+            <button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel-img');
+        
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        const phrases = ["je t'aime ❤️", "tu es tout pour moi", "tu es la meilleure copine", "jamais je t'oublierai", "tu me manques princesse", "je serai toujours là pour toi", "je veux être avec toi", "tu es parfaite"];
+        const animatedText = document.getElementById("animated-text");
+
+        function displayRandomPhrase() {
+            // Choisir une phrase aléatoire du tableau
+            const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+            animatedText.innerHTML = randomPhrase; // Remplace le texte actuel par la nouvelle phrase
+
+            // Rendre le texte visible
+            animatedText.style.opacity = 1; 
+
+            // Faire disparaître le texte après 5 secondes
+            setTimeout(() => {
+                animatedText.style.opacity = 0; // Rendre le texte invisible
+            }, 5000);
+
+            // Attendre 6 secondes avant d'afficher la prochaine phrase (5 secondes d'affichage + 1 seconde pour la disparition)
+            setTimeout(displayRandomPhrase, 6000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            displayRandomPhrase();
+            showImage(currentImageIndex);
+        });
+    </script>
+
+</body>
+</html>

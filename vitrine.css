@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .banner {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .animated-text {
+    font-size: 18px;
+    display: inline-block;
+    white-space: nowrap;
+    animation: slideText 10s linear infinite;
+  }
+  
+  @keyframes slideText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .content {
+    margin-top: 60px; /* Pour compenser la hauteur de la bandelette */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
